@@ -6,23 +6,22 @@ import { Calendar, CalendarList, Agenda } from 'react-native-calendars';
 import HomeScreen from './screens/Main'
 import Header from './Components/Header'
 import HowTo from './screens/How-to'
+import { ThemeProvider } from 'react-native-elements';
 
-class CalandarScreen extends React.Component {
-  render() {
-    return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Calendar/>
-      </View>
-    );
-  }
-}
+
+const theme = {
+  colors: {
+    primary: 'pink',
+  },
+};
+
 
 const RootStack = createStackNavigator(
   {
     Home: HomeScreen,
     Calendar: Calendar,
     Agenda:Agenda,
-    HowtoInstructions:HowTo,
+    HowTo:HowTo,
   },
   {
     initialRouteName: 'Home',
@@ -41,6 +40,10 @@ const RootStack = createStackNavigator(
 
 export default class App extends React.Component {
   render() {
-    return <RootStack />;
+    return(
+     
+    <RootStack />
+    
+    );
   }
 }

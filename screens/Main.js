@@ -1,22 +1,48 @@
 import React from 'react';
-import { StyleSheet, Text, ScrollView, SectionList, Image, Button } from 'react-native';
-import { Contacts } from 'expo';
+import { StyleSheet, Text, ScrollView, SectionList, View, Button } from 'react-native';
+import { ListItem } from 'react-native-elements'
 
+const list = [
+    {
+      title: 'How To Instructions',
+      icon: 'school',
+      path: 'HowTo'
+    },
+    {
+        title: 'Calendar',
+        icon: 'today',
+        path: 'Calendar'
+    },
+    {
+        title: 'Agenda',
+        icon: 'toc',
+        path: 'Agenda'
+    },
+    
 
+]
  export default class HomeScreen extends React.Component {
   
   render() {
     return (
       <ScrollView >
         <Text style={styles.baseText}>Hello! What are you looking for today?</Text>
-        <SectionList
-          sections={[
-            {title: 'Frequently Used', data: ['HowtoInstructions','Calendar','Agenda','Alarm Clock','Contacts']},
-          ]}
-          renderItem={({item}) => <Button onPress={() => this.props.navigation.navigate(item)} title={item} style={styles.item}></Button>}
-          renderSectionHeader={({section}) => <Text style={styles.sectionHeader}>{section.title}</Text>}
-          keyExtractor={(item, index) => index}
-        />
+        
+        <View>
+  {
+    list.map((item, i) => (
+      <ListItem
+        key={i}
+        title={item.title}
+        leftIcon={{ name: item.icon }}
+        onPress={() => this.props.navigation.navigate(item.path)}
+        chevronColor="powderblue"
+        chevron
+        titleStyle={{  fontWeight: 'bold' }}
+      />
+    ))
+  }
+</View>
       </ScrollView>
     );
   }
