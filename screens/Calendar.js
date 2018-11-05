@@ -8,7 +8,7 @@ export default class Header extends React.Component {
     render() {
       return (
         
-          <View style={{ height: 70, backgroundColor: 'powderblue'}} >
+          <View style={{flex:1, height: 70, backgroundColor: 'powderblue'}} >
               <Calendar
   // Initially visible month. Default = Date()
   current={'2012-03-01'}

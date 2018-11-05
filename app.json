@@ -1,11 +1,14 @@
 {
   "expo": {
-    "name": "aidMemoir",
-    "description": "This project is really great.",
+    "name": "AidMemoir",
+    "description": "This project is a roughdraft of an app that can help persons with mental disabilities function better.",
     "slug": "aidMemoir",
     "privacy": "public",
     "sdkVersion": "30.0.0",
-    "platforms": ["ios", "android"],
+    "platforms": [
+      "ios",
+      "android"
+    ],
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
