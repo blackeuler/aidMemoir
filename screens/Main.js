@@ -18,6 +18,11 @@ const list = [
         icon: 'toc',
         path: 'Agenda'
     },
+    {
+      title: 'Contacts',
+      icon: 'toc',
+      path: 'Contact'
+  },
     
 
 ]

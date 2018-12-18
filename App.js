@@ -1,12 +1,13 @@
 
 import React from 'react';
-import { View, Text } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
-import { Calendar, CalendarList, Agenda } from 'react-native-calendars';
+import { Calendar, Agenda } from 'react-native-calendars';
 import HomeScreen from './screens/Main'
 import Header from './Components/Header'
 import HowTo from './screens/How-to'
-import { ThemeProvider } from 'react-native-elements';
+import Contacts from './screens/Contacts'
+import Instructions from './Components/Instructions/Instructions'
+import ContactCard from './Components/ContactCard'
 
 
 const theme = {
@@ -22,6 +23,11 @@ const RootStack = createStackNavigator(
     Calendar: Calendar,
     Agenda:Agenda,
     HowTo:HowTo,
+    Contact:Contacts,
+    Instruction:Instructions,
+    ContactC:ContactCard,
+    
+    
   },
   {
     initialRouteName: 'Home',
@@ -43,6 +49,7 @@ export default class App extends React.Component {
     return(
      
     <RootStack />
+    
     
     );
   }

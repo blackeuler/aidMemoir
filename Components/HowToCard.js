@@ -1,7 +1,8 @@
 import React from 'react';
 import { StyleSheet, View, Text, Image } from 'react-native'
 import { Card, ListItem, Button, Icon } from 'react-native-elements'
-export default class HowToCard extends React.Component {
+import { withNavigation } from 'react-navigation';
+ class HowToCard extends React.Component {
     
       
   render() {
@@ -19,7 +20,14 @@ export default class HowToCard extends React.Component {
           icon={<Icon name='code' color='#ffffff' />}
           backgroundColor='powderblue'
           buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0}}
-          title='Learn Now' />
+          title='Learn Now'
+          onPress={() => {
+            /* 1. Navigate to the Details route with params */
+            this.props.navigation.navigate('Instruction', {
+              video: `${this.props.video}`,
+              title:`${this.props.title}`,
+            });
+          }} />
       </Card> 
         </View>
         
@@ -41,3 +49,5 @@ const styles = StyleSheet.create({
       fontWeight: 'bold',
     },
   });
+
+  export default withNavigation(HowToCard);
